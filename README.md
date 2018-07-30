@@ -8,7 +8,9 @@
   首先将我的仓库代码保存到本地，如果遇到什么问题，也可以对 https://github.com/peiyunh/tiny 参考进行配置。
 
 步骤：
+
 1、下载仓库 git clone --recursive https://github.com/hu5tao/Christmas_hat.git
+
 2、 Installing - MatConvNet 
   >>cd matconvnet/
   >>addpath matlab/
@@ -19,6 +21,7 @@
   这里的cuda_dir和cudnn_dir为你要填的路径;我的是:
   >>vl_compilenn('enableImreadJpeg', true, 'enableGpu', true, 'cudaRoot', ['/usr/local/cuda-8.0'],...
             'cudaMethod', 'nvcc', 'enableCudnn', true, 'cudnnRoot', ['/usr/local/cuda-8.0']);
+						
   发现还是出错如下:
     错误使用 vl_compilenn>nvcc_compile (line 536) Command "/usr/local/cuda-8.0/bin/nvcc" -c "/home/hutao/huta/tiny/matconvnet/matlab  /src/bits/impl/nnconv_cudnn.cu" -DNDEBUG -DENABLE_GPU
   分析:应该是cuda的问题,或许是版本问题;但是仔细打开vl_compilenn.m文件,发现如果不指定cuda的路径(有可能CUDA路径出错),MATLAB也会有默认的CUDA路径;所以我不需要指定cuda的路径;
@@ -31,7 +34,7 @@
   
 3、编译Compile our MEX function in MATLAB and test if it works as expected:
 
-  >> cd utils/;(而不是matconvnet/utils)
+  >>cd utils/;(而不是matconvnet/utils)
   >> compile_mex;
   >> test_compute_dense_overlap;
   
@@ -57,4 +60,4 @@
 2.运行add_hat.py,戴帽子结果将保存到当前文件夹中output.jpg
 
 如果整个有问题或者需要训练的话，可以参考 tiny_face_detect_push.ipynb，结果如下：
-![image](https://github.com/hu5tao/Christmas_hat/blob/master/output.jpg)
+![Image text](https://github.com/hu5tao/Christmas_hat/blob/master/output.jpg)
