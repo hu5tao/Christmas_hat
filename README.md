@@ -45,14 +45,21 @@
 
   $ ls data/widerface
   
-  wider_face_test.mat   wider_face_train.mat    wider_face_val.mat
-  WIDER_test/           WIDER_train/            WIDER_val/
+  wider_face_test.mat   
+  wider_face_train.mat    
+  wider_face_val.mat
+  WIDER_test/          
+  WIDER_train/            
+  WIDER_val/
   
 5、Download pretrained model,下载预训练模型:
 
   ResNet101
+  
   ResNet50
+  
   VGG16
+  
   在tiny文件夹下新建一个文件夹:trained_models,将下载好的预训练模型放在复制到trained_models文件夹下;
   
 **测试的Demo**：可以下载我已经训练好的模型进行测试：百度云盘：https://pan.baidu.com/s/12UZuo6H2TYK4JV6N_U_55Q 新建data文件夹，将测试数据放入
