@@ -13,6 +13,7 @@
 
 2、 Installing - MatConvNet 
   >>cd matconvnet/
+  
   >>addpath matlab/
 
   >>vl_compilenn('enableImreadJpeg', true, 'enableGpu', true, 'cudaRoot', [cuda_dir],...
@@ -34,13 +35,16 @@
   
 3、编译Compile our MEX function in MATLAB and test if it works as expected:
 
-  >>cd utils/;(而不是matconvnet/utils)
+  >>cd utils/;  (而不是matconvnet/utils)
+  
   >> compile_mex;
+  
   >> test_compute_dense_overlap;
   
 4、下载数据Download WIDER FACE and unzip data and annotation files to data/widerface such that:
 
   $ ls data/widerface
+  
   wider_face_test.mat   wider_face_train.mat    wider_face_val.mat
   WIDER_test/           WIDER_train/            WIDER_val/
   
@@ -51,13 +55,15 @@
   VGG16
   在tiny文件夹下新建一个文件夹:trained_models,将下载好的预训练模型放在复制到trained_models文件夹下;
   
-测试的Demo：可以下载我已经训练好的模型进行测试：百度云盘：https://pan.baidu.com/s/12UZuo6H2TYK4JV6N_U_55Q 新建data文件夹，将测试数据放入
+**测试的Demo**：可以下载我已经训练好的模型进行测试：百度云盘：https://pan.baidu.com/s/12UZuo6H2TYK4JV6N_U_55Q 新建data文件夹，将测试数据放入
   
   bboxes = tiny_face_detector('data/demo/selfie.jpg', './selfie.png', 0.5, 0.1, 0)
 
 将要戴帽子的图片放到主文件夹下进行检测,将检测的结果bboxes变量存为detect_results.mat文件,在matlab 命令窗口输入：
+
   >>save detect_results bboxes
-2.运行add_hat.py,戴帽子结果将保存到当前文件夹中output.jpg
+  
+最后运行：**python add_hat.py**,戴帽子结果将保存到当前文件夹中output.jpg
 
 如果整个有问题或者需要训练的话，可以参考 tiny_face_detect_push.ipynb，结果如下：
 ![Image text](https://github.com/hu5tao/Christmas_hat/blob/master/output.jpg)
