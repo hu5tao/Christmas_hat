@@ -20,6 +20,7 @@
             'cudaMethod', 'nvcc', 'enableCudnn', true, 'cudnnRoot', [cudnn_dir]);
             
   这里的cuda_dir和cudnn_dir为你要填的路径;我的是:
+  
   >>vl_compilenn('enableImreadJpeg', true, 'enableGpu', true, 'cudaRoot', ['/usr/local/cuda-8.0'],...
             'cudaMethod', 'nvcc', 'enableCudnn', true, 'cudnnRoot', ['/usr/local/cuda-8.0']);
 						
@@ -29,6 +30,7 @@
   
   >>vl_compilenn('enableImreadJpeg', true, 'enableGpu', true, ...
             'cudaMethod', 'nvcc', 'enableCudnn', true);
+	    
   忽视警告;直至编译成功;
 
   >> vl_testnn('gpu', true);  % vl_testnn('gpu', false) for cpu-only,漫长等待完成.
